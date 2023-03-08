@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+/*
+Harf notları ve karşılıkları aşağıda gösterilmiştir:
+ 90-100 AA 
+ 85-89 BA 
+ 75-84 BB 
+ 70-74 CB 
+ 60-69 CC 
+ 55-59 DC 
+ 50-54 DD 
+ 40-49 FD 
+ 0-39 FF 
+ --- F 
+ */
+namespace NotOrtalamasi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Vize notunuzu giriniz:");
+            int Vize = Convert.ToInt32(Console.ReadLine());                 // vize notu girdisi
+            Console.WriteLine("Final notunuzu giriniz:");
+            int Final = Convert.ToInt32(Console.ReadLine());                // final notu girdisi
+            int NotOrtalamasi = (Vize * 40 / 100) + (Final * 60 / 100);              //ortalama hesaplama 
+            //harf notu sonuc
+            if (NotOrtalamasi < 40) { Console.WriteLine("Not Ortalamasi:" + NotOrtalamasi + "Harf notu: FF"); }
+            if (NotOrtalamasi >= 40 && NotOrtalamasi < 50) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: FD"); }
+            if (NotOrtalamasi >= 50 && NotOrtalamasi < 60) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: DD"); }
+            if (NotOrtalamasi >= 60 && NotOrtalamasi < 70) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: DC"); }
+            if (NotOrtalamasi >= 70 && NotOrtalamasi < 75) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: CC"); }
+            if (NotOrtalamasi >= 75 && NotOrtalamasi < 80) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: CB"); }
+            if (NotOrtalamasi >= 80 && NotOrtalamasi < 85) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: BB"); }
+            if (NotOrtalamasi >= 85 && NotOrtalamasi < 90) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "    Harf notu: BA"); }
+            if (NotOrtalamasi >= 90 && NotOrtalamasi < 100) { Console.WriteLine("Not Ortalamasi: " + NotOrtalamasi + "   Harf notu: AA"); }
+        }
+    }
+}
